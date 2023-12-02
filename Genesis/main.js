@@ -34,9 +34,26 @@ let score2_numeric = Number(score2)
 console.log(score2_numeric)
 
 console.log("-------------------------------------")
-// Chapter-IV:- Operations
-// Mathematical Operators:- +, -, *, /, %, ** 
+// Chapter-IV:- Type Anomalies
 console.log("1" + 2);
 console.log(1 + "2")
 console.log("1" + 2 + 2)
 console.log(1 + 2 + "2")
+
+console.log()
+console.log(+"")
+console.log(+true)
+
+console.log()
+// Type coercion:- Convert the string to a number
+console.log("11" > 10, 10 < "11", "011" > 10, 10 < "011")
+console.log("11" >= 10, 10 <="11", "011" >= 10, 10 <= "11")
+
+// Null 
+console.log()
+console.log("1" > null, 1 > null, 0 > null, 0 >= null)
+console.log(1 == null, 0 == null, "0" == null, "1" == null, undefined == null, NaN == null)
+
+// Undefined
+console.log()
+console.log(1 > undefined, 0 > undefined, 0 == undefined, 1 == undefined, 0 < undefined)
