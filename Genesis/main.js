@@ -57,3 +57,15 @@ console.log(1 == null, 0 == null, "0" == null, "1" == null, undefined == null, N
 // Undefined
 console.log()
 console.log(1 > undefined, 0 > undefined, 0 == undefined, 1 == undefined, 0 < undefined)
+
+console.log("-------------------------------------")
+// Chapter-V:- Post & Pre Increment
+let the_variable = 10
+
+// post-increment operator:-
+//It increments the value of var by 1, but the value returned by the expression is the value of var before the increment
+console.log(the_variable++)
+console.log(the_variable)
+
+console.log(++the_variable)
+console.log(the_variable)
