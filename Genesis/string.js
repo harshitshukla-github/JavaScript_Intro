@@ -77,3 +77,62 @@ const str3 = 'Cats are the best!';
 console.log(str3.endsWith('best!')); // Expected output: true
 
 console.log(str3.endsWith('best', 17));
+
+console.log("-------------------------------------------")
+// 7.|8. String.fromCharCode and String.fromCodePoint
+/*Both String.fromCharCode and String.fromCodePoint are static methods that take a 
+sequence of Unicode code points and return a string.
+The difference is that String.fromCharCode can only handle code points between 0 and 65535,
+while String.fromCodePoint can handle any valid code point, including those above 65535*/
+
+console.table([String.fromCharCode(65), // returns "A"
+              String.fromCodePoint(65), // returns "A"
+              String.fromCharCode(128512), // returns "�" (invalid character)
+              String.fromCodePoint(128512)]) // returns "😀" (emoji)
+
+console.log(String.fromCharCode(189, 43, 190, 61));
+console.log(String.fromCodePoint(9731, 9733, 9842, 0x2f804));
+
+console.log("-------------------------------------------")
+//9. String.prototype.includes()
+/* includes(searchString)
+includes(searchString, position)*/
+//position Optional
+//The position within the string at which to begin searching for searchString. (Defaults to 0.)
+const sentence1 = 'The quick brown fox jumps over the lazy dog.';
+
+const word = 'fox';
+
+console.log(
+  `The word "${word}" ${
+    sentence1.includes(word) ? 'is' : 'is not'
+  } in the sentence`,
+); // Expected output: "The word "fox" is in the sentence"
+
+const str4 = "To be, or not to be, that is the question.";
+
+console.log(str4.includes("To be")); // true
+console.log(str4.includes("question")); // true
+console.log(str4.includes("nonexistent")); // false
+console.log(str4.includes("To be", 1)); // false
+console.log(str4.includes("To be", 0)); // false
+console.log(str4.includes("TO BE")); // false
+console.log(str4.includes("")); // true
+
+console.log("-------------------------------------------")
+// String.prototype.indexOf()
+const paragraph = "I think Ruth's dog is cuter than your dog!";
+
+const searchTerm = 'dog';
+const indexOfFirst = paragraph.indexOf(searchTerm);
+
+console.log(`The index of the first "${searchTerm}" is ${indexOfFirst}`);// Expected output: "The index of the first "dog" is 15"
+
+console.log(
+  `The index of the second "${searchTerm}" is ${paragraph.indexOf(
+    searchTerm,
+    indexOfFirst + 1,
+  )}`,
+); // Expected output: "The index of the second "dog" is 38"
+
+// The index of the first occurrence of searchString found, or -1 if not found.
