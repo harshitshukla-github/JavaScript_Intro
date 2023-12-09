@@ -115,12 +115,15 @@ console.log(str4.includes("To be")); // true
 console.log(str4.includes("question")); // true
 console.log(str4.includes("nonexistent")); // false
 console.log(str4.includes("To be", 1)); // false
-console.log(str4.includes("To be", 0)); // false
+console.log(str4.includes("To be", 0)); // true
 console.log(str4.includes("TO BE")); // false
 console.log(str4.includes("")); // true
 
 console.log("-------------------------------------------")
-// String.prototype.indexOf()
+// 10. String.prototype.indexOf()
+/*indexOf(searchString)
+indexOf(searchString, position) */
+// The index of the first occurrence of searchString found, or -1 if not found.
 const paragraph = "I think Ruth's dog is cuter than your dog!";
 
 const searchTerm = 'dog';
@@ -135,4 +138,59 @@ console.log(
   )}`,
 ); // Expected output: "The index of the second "dog" is 38"
 
+/*Searching for an empty search string produces strange results.
+With no second argument, 
+or with a second argument whose value is less than the calling string's length,
+the return value is the same as the value of the second argument: */
+console.log("Blue Whale".indexOf("")); // returns  0
+console.log("Blue Whale".indexOf("", 9)); // returns  9
+console.log("Blue Whale".indexOf("", 10)); // returns 10
+console.log("Blue Whale".indexOf("", 11)); // returns 10
+
+console.log("-------------------------------------------")
+// 11. String.prototype.isWellFormed()
+/*The isWellFormed() method of String values returns a boolean
+indicating whether this string contains any lone surrogates.*/
+
+const strings = [
+  // Lone leading surrogate
+  "ab\uD800",
+  "ab\uD800c",
+  // Lone trailing surrogate
+  "\uDFFFab",
+  "c\uDFFFab",
+  // Well-formed
+  "abc",
+  "ab\uD83D\uDE04c",
+];
+
+console.table(strings)
+
+const illFormed = "https://example.com/search?q=\uD800";
+
+/*try {
+  encodeURI(illFormed);
+} catch (e) {
+  console.log(e); // URIError: URI malformed
+}*/
+
+if (illFormed.isWellFormed()) {
+  console.log(encodeURI(illFormed));
+} else {
+  console.warn("Ill-formed strings encountered."); // Ill-formed strings encountered.
+}
+
+console.log("-------------------------------------------")
+// String.prototype.lastIndexOf()
+
+/*indexOf(searchString)
+indexOf(searchString, position) */
 // The index of the first occurrence of searchString found, or -1 if not found.
+console.log(
+  `Index of the last ${searchTerm} is ${paragraph.lastIndexOf(searchTerm)}`,
+);
+
+const anyString = "Brave, Brave New World";
+
+console.log(anyString.indexOf("Brave")); // 0
+console.log(anyString.lastIndexOf("Brave")); // 7
