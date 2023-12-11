@@ -212,3 +212,20 @@ const found1 = str5.match(re);
 
 console.log(found1);
 
+// Using global and ignoreCase flags with match()
+const str6 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const regexp = /[A-E]/gi;
+const matches = str6.match(regexp);
+
+console.log()
+console.log(matches);// ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
+
+//Using named capturing groups
+const paragraph2 = "The quick brown fox jumps over the lazy dog. It barked.";
+
+const capturingRegex = /(?<animal>fox|cat) jumps over/;
+const found2 = paragraph2.match(capturingRegex);
+console.log(found2.groups); // {animal: "fox"}
+
+
+console.log("-------------------------------------------")
