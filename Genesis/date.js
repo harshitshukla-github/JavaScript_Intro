@@ -33,7 +33,10 @@ console.log(myDate.toISOString())
 /*The toLocaleString() method of Date instances returns a string with a language-sensitive representation of this date. 
 In implementations with Intl.DateTimeFormat API support, this method simply calls Intl.DateTimeFormat.*/
 console.log(myDate.toLocaleString())
-
+console.log(myDate.toLocaleString('default', {
+    weekday: "long",
+    timeZone: "IST"
+}))
 // Date.prototype.toString()
 /*The toString() method of Date instances returns a string representing
 this date interpreted in the local timezone.*/
