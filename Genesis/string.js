@@ -194,3 +194,21 @@ const anyString = "Brave, Brave New World";
 
 console.log(anyString.indexOf("Brave")); // 0
 console.log(anyString.lastIndexOf("Brave")); // 7
+
+console.log("-------------------------------------------")
+// String.prototype.match()
+/*The match() method of String values retrieves the result of matching
+this string against a regular expression. */
+
+const paragraph1 = 'The quick brown fox jumps over the lazy dog. It barked.';
+const regex = /[A-Z]/g;
+const found = paragraph1.match(regex);
+
+console.log(found);// Expected output: Array ["T", "I"]
+
+const str5 = "For more information, see Chapter 3.4.5.1";
+const re = /see (chapter \d+(\.\d)*)/i;
+const found1 = str5.match(re);
+
+console.log(found1);
+
