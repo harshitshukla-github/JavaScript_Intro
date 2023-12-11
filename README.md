@@ -1,6 +1,6 @@
 # JavaScript_Intro
 JavaScript Basics and Intermediate
-<ul>
+<ul style="list-style:🎆">
     <li>main.js</li>
     <li>string.js</li>
     <li>math.js</li>
