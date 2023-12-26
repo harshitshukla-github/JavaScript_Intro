@@ -128,8 +128,64 @@ console.log(array1.unshift(4, 5)); // Expected output: 5
 console.log(array1); // Expected output: Array [4, 5, 1, 2, 3]
 
 // Array.prototype.slice()
+console.log("-------------------------------")
 /*The slice() method of Array instances returns a shallow copy of a portion
 of an array into a new array object selected from start to end 
 (end not included) where start and end represent the index
 of items in that array. The original array will not be modified.*/
 
+/*slice()
+slice(start)
+<!--Zero-based index at which to start extraction, converted to an integer.
+Negative index counts back from the 
+end of the array — if start < 0, start + array.length is used.
+If start < -array.length or start is omitted, 0 is used.
+If start >= array.length, nothing is extracted.-->
+
+slice(start, end)
+<!--Zero-based index at which to end extraction, 
+converted to an integer. slice() extracts up to but not including end.
+
+Negative index counts back from the end of the array — 
+if end < 0, end + array.length is used.
+If end < -array.length, 0 is used.
+If end >= array.length or end is omitted, array.length is used, causing all elements until the end to be extracted.
+If end is positioned before or at start after normalization, nothing is extracted.
+*/
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2)); // Expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4)); // Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5)); // Expected output: Array ["bison", "camel", "duck", "elephant"]
+
+console.log(animals.slice(-2)); // Expected output: Array ["duck", "elephant"]
+
+console.log(animals.slice(2, -1)); // Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice()); // Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+
+// Using slice() on sparse arrays
+console.log([1, 2, , 4, 5].slice(1, 4)); // [2, empty, 4]
+
+// Array.prototype.splice()
+console.log("-------------------------------")
+/*The splice() method of Array instances changes the contents
+of an array by removing or replacing existing elements and/or 
+adding new elements in place */
+
+/*splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2)
+splice(start, deleteCount, item1, item2, ... , itemN)*/
+const months = ['Jan', 'March', 'April', 'June'];
+  // Inserts at index 1
+ months.splice(1, 0, 'Feb');
+console.log(months);
+  // Expected output: Array ["Jan", "Feb", "March", "April", "June"]
+months.splice(4, 1, 'May');
+  // Replaces 1 element at index 4
+console.log(months);
+  // Expected output: Array ["Jan", "Feb", "March", "April", "May"]
