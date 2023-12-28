@@ -54,3 +54,24 @@ function aFunction(){
 }
 
 aFunction();
+
+console.log("------------------------------------------------")
+// Arrow Functions
+
+const arrow1 =  () => {
+  let name = "hitesh"
+  console.log(this);
+}
+
+arrow1()
+
+console.log()
+
+// 
+const arrow2 = (num1, num2) =>  num1 + num2 
+
+console.log(arrow2(10, 30))
+
+const arrow3 = num1 => num1 ** 2
+
+console.log(arrow3(4))
