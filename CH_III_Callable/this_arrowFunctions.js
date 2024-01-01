@@ -67,7 +67,7 @@ arrow1()
 
 console.log()
 
-// 
+// Arrow Function Variants
 const arrow2 = (num1, num2) =>  num1 + num2 
 
 console.log(arrow2(10, 30))
