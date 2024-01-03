@@ -32,6 +32,16 @@ JavaScript Basics and Intermediate
         <li>control.js</li>
         <li>iterators.js</li>
         <li>specialLoops.js</li>
+        <li>arrayIterMethods.js</li>
+      </ul>
+    </li>
+    <li>
+      <span>CHAPTER IV: Control Flow 🌊</span>
+      <ul>
+        <li>control.js</li>
+        <li>iterators.js</li>
+        <li>specialLoops.js</li>
+        <li>arrayIterMethods.js</li>
       </ul>
     </li>
 </ul>
